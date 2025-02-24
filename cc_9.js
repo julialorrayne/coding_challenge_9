@@ -62,7 +62,14 @@ class Company {  //Created a Company class
             return total + employee.calculateAnnualSalary();
         },0);
     };
+    promoteToManager(employee,teamSize) { ////Task 5: Implementing Promotions
+        const index = this.employees.indexOf(employee);
+        if (index !== -1)
+            this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    }  //This method converts an Employee into a Manager while retaining their original details
 };
+
+
 
 
 
