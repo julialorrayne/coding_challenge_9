@@ -22,5 +22,26 @@ console.log(employee1.getDetails());
 console.log(employee1.calculateAnnualSalary());
 //logged its details to the console
 
+//Task 2: Creating a Manager Class (Inheritance & Method Overriding)
+class Manager extends Employee {
+    constructor(name, id, department, salary, teamSize) {
+        super(name, id, department, salary);
+        this.teamSize = teamSize; // add teamSize as new property
+    }; 
+    getDetails() {   // Override getDetails() to include the team size.
+        return `Manager's name: ${this.name}, ID: ${this.id}, department: ${this.department},salary: ${this.salary}, team size: ${this.teamSize}`;
+    }
+    calculateBonus() { //Added a method calculateBonus() that returns 10% of the manager’s annual salary.
+        return this.salary * 12 * 0.10;
+    }
+};//Created a Manager class that extends Employee.
+
+const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
+console.log(mgr1.getDetails());
+
+console.log(mgr1.calculateBonus()); 
+
+
+
 
  
